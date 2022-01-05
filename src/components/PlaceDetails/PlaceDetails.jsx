@@ -4,8 +4,10 @@ import useStyles from './styles'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import Rating from '@mui/lab/Rating'
-const PlaceDetails = ({ place }) => {
+const PlaceDetails = ({ place, selected, refProp }) => {
     const classes = useStyles();
+
+    if(selected) refProp?.current?.scrollIntoView({ behavior: "smooth", block: "start"})
     return (
         <Card elevation={6}>
             <CardMedia 
